@@ -4326,3 +4326,18 @@ class FerriteTestnet(Ferrite):
         'enode3.ferritecoin.org s t',
     ]
 
+class Dogecoin(AuxPowMixin, Coin):
+    NAME = "Flopcoin"
+    SHORTNAME = "FLOP"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("02facafd")
+    XPRV_VERBYTES = bytes.fromhex("02fac398")
+    P2PKH_VERBYTE = bytes.fromhex("1e")
+    P2SH_VERBYTES = (bytes.fromhex("16"),)
+    WIF_BYTE = bytes.fromhex("9e")
+    GENESIS_HASH = ('1f1037762db00882d3353b8d9dcfd52fc93cbc2d694c62f1ecd6a209cf9d30d0')
+    TX_COUNT = 43940
+    TX_COUNT_HEIGHT = 37834
+    TX_PER_BLOCK = 20
+    REORG_LIMIT = 2000
+    DESERIALIZER = lib_tx.DeserializerAuxPowSegWit
